@@ -179,3 +179,25 @@ while current <= len(arr) - 1:
             min = tempSum    
     current += 1
 print(min, max)
+
+#######################################
+##                                   ##
+##       Birthday Cake Candles       ##
+##                                   ##
+#######################################
+
+def birthdayCakeCandles(n, ar):
+    maxHeight = 0
+    numMax = 0
+    for i in range(n):
+        if ar[i] > maxHeight:
+            maxHeight = ar[i]
+            numMax = 1
+        elif ar[i] == maxHeight:
+            numMax += 1
+    return numMax
+
+n = int(input().strip())
+ar = list(map(int, input().strip().split(' ')))
+result = birthdayCakeCandles(n, ar)
+print(result)

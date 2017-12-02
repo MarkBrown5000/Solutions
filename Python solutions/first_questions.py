@@ -137,3 +137,18 @@ avg0 = num0/n
 print(avgPos)
 print(avgNeg)
 print(avg0)
+
+#######################################
+##                                   ##
+##            Staircase              ##
+##                                   ##
+#######################################
+
+n = int(input().strip())
+current = n
+while current > 0:
+    stairs = "#"
+    for i in range(n - current):
+        stairs += "#"
+    print(stairs.rjust(n))
+    current -= 1

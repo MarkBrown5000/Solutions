@@ -201,3 +201,27 @@ n = int(input().strip())
 ar = list(map(int, input().strip().split(' ')))
 result = birthdayCakeCandles(n, ar)
 print(result)
+
+#######################################
+##                                   ##
+##         Time Conversions          ##
+##                                   ##
+#######################################
+
+def timeConversion(s):
+    time = s.split(":")
+    
+    am_pm = time[2][-2:]
+    time[2] = time[2][:-2]
+    
+    if am_pm == "AM" and time[0] == "12":
+        time[0] = "00"
+    elif am_pm == "PM":
+        if time[0] != "12":
+            time[0] = str(int(time[0]) + 12)
+    finalTime = time[0] + ":" + time[1] + ":" + time[2]
+    return finalTime	
+	
+s = input().strip()
+result = timeConversion(s)
+print(result)

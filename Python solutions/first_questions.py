@@ -152,3 +152,30 @@ while current > 0:
         stairs += "#"
     print(stairs.rjust(n))
     current -= 1
+
+#######################################
+##                                   ##
+##          Mini-max sum             ##
+##                                   ##
+#######################################
+	
+arr = list(map(int, input().strip().split(' ')))
+
+current = 0
+max = 0
+min = 0
+while current <= len(arr) - 1:
+    tempSum = 0
+    for i in range(len(arr)):
+        if i != current:
+            tempSum += arr[i]
+    if current == 0:
+        max = tempSum
+        min = tempSum
+    else:
+        if (tempSum > max):
+            max = tempSum
+        elif(tempSum < min):
+            min = tempSum    
+    current += 1
+print(min, max)

@@ -109,3 +109,31 @@ for i in range(n):
         
 difference = abs(primaryDiag - secondaryDiag) 
 print(difference)
+
+#######################################
+##                                   ##
+##            Plus Minus             ##
+##                                   ##
+#######################################
+
+n = int(input().strip())
+arr = [int(arr_temp) for arr_temp in input().strip().split(' ')] 
+numNeg = 0
+numPos = 0
+num0 = 0
+
+for i in range(n):
+    if arr[i] < 0:
+        numNeg += 1
+    elif arr[i] > 0:
+        numPos += 1
+    else:
+        num0 += 1
+        
+avgNeg = numNeg/n
+avgPos = numPos/n
+avg0 = num0/n
+
+print(avgPos)
+print(avgNeg)
+print(avg0)

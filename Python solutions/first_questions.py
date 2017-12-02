@@ -63,3 +63,20 @@ b0, b1, b2 = input().strip().split(' ')
 b0, b1, b2 = [int(b0), int(b1), int(b2)]
 result = solve(a0, a1, a2, b0, b1, b2)
 print (" ".join(map(str, result)))
+
+#######################################
+##                                   ##
+##          A Very Big Sum           ##
+##                                   ##
+#######################################
+
+def aVeryBigSum(n, ar):
+    answer = 0
+    for i in range(n):
+        answer += ar[i]
+    return answer
+
+n = int(input().strip())
+ar = list(map(int, input().strip().split(' ')))
+result = aVeryBigSum(n, ar)
+print(result)

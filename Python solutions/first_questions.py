@@ -80,3 +80,32 @@ n = int(input().strip())
 ar = list(map(int, input().strip().split(' ')))
 result = aVeryBigSum(n, ar)
 print(result)
+
+#######################################
+##                                   ##
+##        Diagonal Difference        ##
+##                                   ##
+#######################################
+
+n = int(input().strip())
+a = []
+for a_i in range(n):
+    a_t = [int(a_temp) for a_temp in input().strip().split(' ')]
+    a.append(a_t)
+#print(a[0][0])
+primaryDiag = 0
+secondaryDiag = 0
+#print(int(n/2))
+if n % 2 != 0:
+    secondaryDiag += a[int(n/2)][int(n/2)]
+for i in range(n):
+    for j in range(n):
+        if i == j:
+            primaryDiag += a[i][j]
+            #print("Primary Diagonal: ", i, j)
+        elif ((i < j) and (j == ((n - 1) - i))) or ((i > j) and (i == (n - 1) - j)):
+            secondaryDiag += a[i][j]
+            #print("Secondary Diagonal: ", i, j)
+        
+difference = abs(primaryDiag - secondaryDiag) 
+print(difference)

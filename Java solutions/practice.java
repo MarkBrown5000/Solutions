@@ -97,3 +97,43 @@ public class Solution {
         
 }
 */
+
+//Solution to Making Anagrams exercise
+public class Solution {
+    public static int numberNeeded(String first, String second) {
+        int numDeletions = 0;
+        char[] string1 = first.toCharArray(); 
+        char[] string2 = second.toCharArray(); 
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        char[] alpha = alphabet.toCharArray();
+        
+        for(int i = 0; i < alpha.length; i++){
+            int count1 = 0;
+            int count2 = 0;
+            
+            for(int j = 0; j < string1.length; j++){
+                if(alpha[i] == string1[j]){
+                    count1++;
+                }
+            }
+            
+            for(int k = 0; k < string2.length; k++){
+                if(alpha[i] == string2[k]){
+                    count2++;
+                }
+            }
+            if (count1 != count2){
+                numDeletions += Math.abs(count1 - count2);
+            }
+        }
+     
+        return numDeletions;
+    }
+  
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String a = in.next();
+        String b = in.next();
+        System.out.println(numberNeeded(a, b));
+    }
+}
